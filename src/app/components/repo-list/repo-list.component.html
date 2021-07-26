@@ -1,0 +1,36 @@
+
+<div *ngIf="repoList?.length">
+  <p>
+    Отображены только НЕархивные репозитории (через метод filterArchived)
+  </p>
+
+  <div>
+    <mat-form-field class="w-100">
+      <input matInput [(ngModel)]="fltr.language" placeholder="language (на dirty pipe. только хардкор)">
+    </mat-form-field>
+    <tripple-checkbox  label="has_wiki (трехпозиционный. как в лучших домах лОндона и парижа)" [(value)]="fltr.has_wiki"></tripple-checkbox>
+    <br>
+    <tripple-checkbox  label="has_issues" [(value)]="fltr.has_issues"></tripple-checkbox>
+    <br>
+    <tripple-checkbox  label="has_pages" [(value)]="fltr.has_pages"></tripple-checkbox>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+
+
+<mat-card class="card" *ngFor="let repo of repoList | filter : fltr; trackBy: trackById">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title><a [routerLink]="['../repo', repo.owner.login, repo.name]">{{repo.full_name}}</a></mat-card-title>
+    <mat-card-subtitle>{{repo.language}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>{{repo.description}}</p>
+    has_wiki: <boolean [model]="repo.has_wiki"></boolean><br>
+    has_issues: <boolean [model]="repo.has_issues"></boolean><br>
+    has_pages: <boolean [model]="repo.has_pages"></boolean><br>
+  </mat-card-content>
+</mat-card>

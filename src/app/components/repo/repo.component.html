@@ -1,0 +1,32 @@
+
+
+
+<mat-card class="card card--wide" *ngIf="repo">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{repo.full_name}}</mat-card-title>
+    <mat-card-subtitle>{{repo.language}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>{{repo.description}}</p>
+
+    <p>
+      subscribers_count:
+      {{repo.subscribers_count > 3000 ? 'аж' : 'всего'}}
+      {{repo.subscribers_count}}
+    </p>
+    <p>
+      watchers: {{repo.watchers}}
+    </p>
+
+    <div>
+      <h5>Коммиты</h5>
+
+      <div *ngFor="let commit of commits">
+        sha: {{commit.sha}} (by {{commit.author?.login}})
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>
