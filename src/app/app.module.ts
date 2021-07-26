@@ -6,12 +6,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AppComponent} from "./app.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {commonVendors} from "./app.vendors";
-import {RepoListComponent} from "./components/repo-list/repo-list.component";
+import {RepoListComponent} from "./repo/repo-list/repo-list.component";
 import {FilterPipe} from "./pipes/filter.pipe";
 import {BooleanComponent} from "./components/boolean.component";
 import {TripleCheckboxComponent} from "./components/triple-checkbox.component";
-import {RepoComponent} from "./components/repo/repo.component";
-import {ReposComponent} from "./components/repos/repos.component";
+import {RepoComponent} from "./repo/repo/repo.component";
+import {ReposComponent} from "./repo/repos/repos.component";
 
 @NgModule({
   declarations: [
