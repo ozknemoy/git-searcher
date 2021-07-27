@@ -12,10 +12,11 @@ import {first} from "rxjs/operators";
   selector: 'repo',
   templateUrl: './repos.component.html',
   styleUrls: ['./repos.component.sass'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ReposComponent {
+  /** title */
   title = 'git-searcher';
+  /** список репозиториев */
   repoList: IGitSearchItem[] = [];
 
   /** кастомный фильтр или обработка */

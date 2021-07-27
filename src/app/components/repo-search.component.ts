@@ -29,6 +29,7 @@ import {IGitSearchData, IGitSearchItem} from "../interfaces/git.interface";
 export class RepoSearchComponent {
   /** значение */
   @Input() model: number | null = null;
+  /** когда поиск начинать */
   @Input() charsIgnore = 1;
   /** внешний обработчик полученых значений с бека */
   @Input() outerHandler?: (comps: IGitSearchItem[]) => IGitSearchItem[]

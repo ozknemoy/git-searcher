@@ -14,7 +14,9 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./repo.component.sass'],
 })
 export class RepoComponent {
+  /** репо */
   repo: IGitRepo | null = null;
+  /** коммиты */
   commits: IGitCommits[] | null = null;
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {
